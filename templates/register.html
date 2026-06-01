@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Speaker Registration</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<header>
+    <h1>Speaker Registration</h1>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/register">Registration</a>
+        <a href="/verify">Verification</a>
+    </nav>
+</header>
+
+
+<section class="demo">
+<h2>User Registration</h2>
+
+
+<label>Select Model:</label>
+
+<select id="modelSelect">
+    <option value="ecapa">ECAPA-TDNN</option>
+    <option value="cta">CTA-E-Branchformer</option>
+    <option value="ecapa_conformer">
+    ECAPA-Conformer
+    </option>
+    <option value="ebranchformer">EBranchformer-VoIP</option>
+    <option value="ecapa_kathbath">
+    ECAPA Zeroshot Kathbath
+    </option>
+</select>
+
+<br><br>
+
+<input type="text"
+id="name"
+placeholder="Enter Name">
+
+<br><br>
+
+<input type="text"
+id="userId"
+placeholder="Enter Unique ID">
+
+<br><br>
+<h3>Read This Statement:</h3>
+
+<p id="statement">
+Artificial intelligence and machine learning are transforming the future of biometric authentication systems. 
+Speaker recognition technology can identify and verify individuals using unique voice characteristics such as pitch, tone, frequency, and speaking patterns. 
+This system improves security by allowing users to authenticate themselves using only their voice. 
+Advanced deep learning models like ECAPA-TDNN can generate highly accurate voice embeddings for each speaker. 
+These embeddings act as unique voice fingerprints and help the system distinguish one person from another. 
+Voice biometrics is now widely used in banking, smart devices, virtual assistants, and secure access systems around the world.
+</p>
+
+<br>
+
+<button id="startBtn">
+Start Recording
+</button>
+
+<button id="stopBtn" disabled>
+Stop Recording
+</button>
+
+<br><br>
+
+<audio id="audioPlayback" controls></audio>
+
+<br><br>
+<button id="submitBtn">
+Register User
+</button>
+
+<br><br>
+
+<h2 id="result"></h2>
+
+</section>
+
+<script src="{{ url_for('static', filename='js/register.js') }}"></script>
+
+</body>
+</html>
